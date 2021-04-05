@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: rgb(101,101,231);
+      background: linear-gradient(0deg, hsl(240, 73%, 65%) 0%, hsl(273, 75%, 66%) 100%);
+      color: hsl(237, 12%, 33%);
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .faq-section {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5);
+      margin: 8em 1em 1em;
+      padding:1em;
+      width: 100%;
+    }
+    .faq-section__image {
+      margin: 0 auto;
+      position: relative;
+      width: 80%;
+    }
+    .shadow {
+      position: absolute;
+      top: -1em;
+      width: 100%;
+    }
+    .image {
+      position: absolute;
+      left: -.25em;
+      top: -3.5em;
+      width: 100%;
+    }
+    .box {
+      display: none;
+    }
+    .faq-section__container {
+      margin-top: 6em;
+    }
+    .faq-section__title {
+      color: hsl(238, 29%, 16%);
+      font-size:2.4em;
+      font-weight: 700;
+      margin-bottom: .4em;
+      text-align: center;
+    }
+    .faq-section__questions {
+      font-size: 12px;
+    }
+    .faq-section__questions li {
+      border-bottom: 1px solid hsl(240, 5%, 91%);
+      padding:1.5em 0;
+    }
+    .faq-section__questions li:focus {
+      outline: none;
+    }
+    .faq-section__questions li:focus .answer {
+      display:block;
+    }
+    .question {
+      display: block;
+    }
+    .question::after {
+      border-top: 2px solid hsl(14, 88%, 65%);
+      border-right: 2px solid hsl(14, 88%, 65%);
+      content: '';
+      font-weight: 700;
+      float: right;
+      height: 4px;
+      transform: rotate(-225deg);
+      width: 4px;
+    }
+    .faq-section__questions li:focus .question::after {
+      transform: rotate(-45deg);
+    }
+    .faq-section__questions li:focus .question {
+      font-weight: 700;
+    }
+    .answer {
+      display: none;
+    }
+
+    @media only screen and (min-width: 375px) {
+      body {
+        align-items: center;
+        justify-content: center;
+      }
+      .faq-section {
+        display: flex;
+        margin: 0;
+        max-width: 920px;
+        position: relative;
+      }
+      .faq-section__image,
+      .faq-section__container {
+        width: 50%;
+      }
+      .faq-section__image {
+        bottom: -1em;
+        left: -1em;
+        overflow: hidden;
+      }
+      .faq-section__container {
+        margin-top: 1em;
+      }
+      .shadow {
+        left: -9em;
+        top: -4em;
+        width: 120%;
+      }
+      .image {
+        left: -3em;
+        top: 1em;
+      }
+      .box {
+        display: block;
+        left: -8em;
+        position: absolute;
+        top: 12.5em;
+        z-index: 9;
+      }
+      .faq-section__title {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section
+    class="faq-section"
+  >
+    <div class="box">
+      <img src="images/illustration-box-desktop.svg" alt="Box" />
+    </div> 
+    <div
+      class="faq-section__image"
+    >
+      <picture class="shadow">
+        <source media="(min-width:375px)" srcset="images/bg-pattern-desktop.svg">
+        <img src="images/bg-pattern-mobile.svg" class="shadow" alt="shadow" />
+      </picture>
+      <picture class="image">
+        <source media="(min-width:375px)" srcset="images/illustration-woman-online-desktop.svg">
+        <img src="images/illustration-woman-online-mobile.svg" class="image" alt="FAQ" />
+      </picture> 
+    </div>
+    <div class="faq-section__container">
+      <h1 class="faq-section__title">FAQ</h1>
+      <ul class="faq-section__questions">
+        <li tabindex="1" class="faq-section__question">
+          <p class="question">How many team members can I invite?</p>
+          <p class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+        </li>
+        <li tabindex="2" class="faq-section__question">
+          <p class="question">What is the maximum file upload size?</p>
+          <p class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </li>
+        <li tabindex="3" class="faq-section__question">
+          <p class="question">How do I reset my password?</p>
+          <p class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </li>
+        <li tabindex="4" class="faq-section__question">
+          <p class="question">Can I cancel my subscription?</p>
+          <p class="answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </li>
+        <li tabindex="5" class="faq-section__question">
+          <p class="question">Do you provide additional support?</p>
+          <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+</body>
+</html>
