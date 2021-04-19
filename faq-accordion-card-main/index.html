@@ -33,54 +33,59 @@
       background: white;
       border-radius: 1.5rem;
       box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5);
-      margin: 8em 1em 1em;
-      padding:1em;
+      height: fit-content;
+      margin: 8em auto 1em;
+      max-width: 325px;
+      padding-bottom: 30px;
       width: 100%;
     }
     .faq-section__image {
-      margin: 0 auto;
-      position: relative;
-      width: 80%;
+      margin: -108px auto 0;
+      width: 280px;
     }
-    .shadow {
-      position: absolute;
-      top: -1em;
-      width: 100%;
+    .shadow-image {
+      background-image: url(./images/bg-pattern-mobile.svg);
+      background-position: center top;
+      background-repeat: no-repeat;
+      height: 114px;
+      margin-top: -90px;
+      width: 270px;
     }
-    .image {
-      position: absolute;
-      left: -.25em;
-      top: -3.5em;
-      width: 100%;
+    .main-image {
+      background-image: url(./images/illustration-woman-online-mobile.svg);
+      background-position-x: -10px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 195px;
+      width: 270px;
     }
     .box {
+      background: url(./images/illustration-box-desktop.svg) no-repeat;
       display: none;
-    }
-    .faq-section__container {
-      margin-top: 6em;
     }
     .faq-section__title {
       color: hsl(238, 29%, 16%);
-      font-size:2.4em;
+      font-size:2em;
       font-weight: 700;
       margin-bottom: .4em;
       text-align: center;
     }
     .faq-section__questions {
       font-size: 12px;
+      padding: 7px 23px;
     }
     .faq-section__questions li {
       border-bottom: 1px solid hsl(240, 5%, 91%);
-      padding:1.5em 0;
-    }
-    .faq-section__questions li:focus {
-      outline: none;
+      padding: 7px  0;
     }
     .faq-section__questions li:focus .answer {
       display:block;
+      line-height: 1.5;
     }
     .question {
       display: block;
+      font-size: 13px;
+      font-weight: normal;
     }
     .question::after {
       border-top: 2px solid hsl(14, 88%, 65%);
@@ -97,12 +102,16 @@
     }
     .faq-section__questions li:focus .question {
       font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .faq-section__questions li:active .question {
+      color: hsl(14, 88%, 65%);
     }
     .answer {
       display: none;
     }
 
-    @media only screen and (min-width: 375px) {
+    @media only screen and (min-width: 376px) {
       body {
         align-items: center;
         justify-content: center;
@@ -111,6 +120,7 @@
         display: flex;
         margin: 0;
         max-width: 920px;
+        min-height: 480px;
         position: relative;
       }
       .faq-section__image,
@@ -118,31 +128,62 @@
         width: 50%;
       }
       .faq-section__image {
-        bottom: -1em;
-        left: -1em;
-        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
       }
       .faq-section__container {
         margin-top: 1em;
       }
-      .shadow {
-        left: -9em;
-        top: -4em;
-        width: 120%;
+      .shadow-image {
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-position-x: -622px;
+        background-position-y: -320px;
+        background-size: 220%;
+        height: 107%;
+        margin-top: 0;
+        position: absolute;
+        top: 11px;
+        width: 100%;
       }
-      .image {
-        left: -3em;
-        top: 1em;
+      .main-image {
+        background-image: url(./images/illustration-woman-online-desktop.svg);
+        background-position-x: right;
+        background-position-y: center;
+        background-size: 122%;
+        height: 100%;
+        max-width: 387px;
+        position: relative;
+        top: .1em;
+        width: 100%;
+        z-index: 4;
       }
       .box {
+        background-image: url(./images/illustration-box-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
         display: block;
-        left: -8em;
+        height: 100%;
+        left: -5.5em;
         position: absolute;
-        top: 12.5em;
+        top: 204px;
+        width: 180px;
         z-index: 9;
       }
       .faq-section__title {
+        font-size: 2em;
+        margin: 1.7em 0 25px .5em;
         text-align: left;
+      }
+      .faq-section__questions {
+        margin-left: .4em;
+        max-width:72%;
+        padding: 0 1em 1em;
+      }
+      .faq-section__questions li {
+        padding: 5px 0;
+      }
+      .question {
+        font-size: 14px;
       }
     }
   </style>
@@ -151,43 +192,35 @@
   <section
     class="faq-section"
   >
-    <div class="box">
-      <img src="images/illustration-box-desktop.svg" alt="Box" />
-    </div> 
     <div
       class="faq-section__image"
     >
-      <picture class="shadow">
-        <source media="(min-width:375px)" srcset="images/bg-pattern-desktop.svg">
-        <img src="images/bg-pattern-mobile.svg" class="shadow" alt="shadow" />
-      </picture>
-      <picture class="image">
-        <source media="(min-width:375px)" srcset="images/illustration-woman-online-desktop.svg">
-        <img src="images/illustration-woman-online-mobile.svg" class="image" alt="FAQ" />
-      </picture> 
+      <div class="box"></div> 
+      <div class="main-image"></div>
+      <div class="shadow-image"></div>
     </div>
     <div class="faq-section__container">
       <h1 class="faq-section__title">FAQ</h1>
       <ul class="faq-section__questions">
         <li tabindex="1" class="faq-section__question">
-          <p class="question">How many team members can I invite?</p>
+          <h2 class="question">How many team members can I invite?</h2>
           <p class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
         </li>
         <li tabindex="2" class="faq-section__question">
-          <p class="question">What is the maximum file upload size?</p>
+          <h2 class="question">What is the maximum file upload size?</h2>
           <p class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
         </li>
         <li tabindex="3" class="faq-section__question">
-          <p class="question">How do I reset my password?</p>
+          <h2 class="question">How do I reset my password?</h2>
           <p class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
             A reset link will be emailed to you.</p>
         </li>
         <li tabindex="4" class="faq-section__question">
-          <p class="question">Can I cancel my subscription?</p>
+          <h2 class="question">Can I cancel my subscription?</h2>
           <p class="answer">Yes! Send us a message and we’ll process your request no questions asked.</p>
         </li>
         <li tabindex="5" class="faq-section__question">
-          <p class="question">Do you provide additional support?</p>
+          <h2 class="question">Do you provide additional support?</h2>
           <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
         </li>
       </ul>
